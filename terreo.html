@@ -112,10 +112,15 @@
                 <a href="index.html#diferenciais" class="hover:text-[var(--primary-dark)] smooth-hover">Estrutura</a>
                 <a href="index.html#localizacao" class="hover:text-[var(--primary-dark)] smooth-hover">Localização</a>
             </div>
-            <a href="index.html#orcamento"
-                class="hidden md:inline-flex bg-[var(--primary-dark)] text-white px-7 py-3 rounded-full text-[15px] font-medium hover:bg-[var(--accent-blue)] hover:shadow-lg hover:shadow-[var(--accent-blue-light)]/30 smooth-hover">
-                Solicitar Proposta
-            </a>
+            <div class="flex items-center gap-3">
+                <a href="index.html#orcamento"
+                    class="inline-flex bg-[var(--primary-dark)] text-white px-4 py-2 md:px-7 md:py-3 rounded-full text-xs md:text-[15px] font-medium hover:bg-[var(--accent-blue)] hover:shadow-lg hover:shadow-[var(--accent-blue-light)]/30 smooth-hover whitespace-nowrap">
+                    Solicitar Proposta
+                </a>
+                <button id="mobileMenuBtn" aria-label="Abrir menu" class="md:hidden text-[var(--primary-dark)] p-1">
+                    <i data-lucide="menu" stroke-width="1.5" class="w-7 h-7"></i>
+                </button>
+            </div>
         </div>
     </nav>
 
@@ -131,7 +136,7 @@
                 </div>
                 <span
                     class="absolute bottom-6 left-6 inline-block bg-white/20 backdrop-blur-md text-white px-4 py-1.5 rounded-full text-sm font-medium tracking-wide border border-white/30">Até
-                    250 pax</span>
+                    250 pessoas</span>
             </div>
 
             <div data-animate="slide-right" class="flex flex-col pt-4 lg:pt-10">
@@ -145,14 +150,14 @@
                     com pé direito expandido. O cartão de visitas perfeito desde o credenciamento, com infraestrutura
                     completa para feiras e exposições.</p>
 
-                <div data-animate class="delay-100 grid grid-cols-4 gap-6 mb-14">
+                <div data-animate class="delay-100 grid grid-cols-2 sm:grid-cols-4 gap-6 mb-14">
                     <div class="text-center group cursor-default">
                         <div
                             class="w-16 h-16 mx-auto rounded-2xl bg-[var(--bg-light)]/40 border border-[var(--bg-light)] flex items-center justify-center mb-4 group-hover:bg-[var(--accent-blue)]/10 smooth-hover">
                             <i data-lucide="scan" stroke-width="1.5" class="w-7 h-7 text-[var(--primary-dark)]"></i>
                         </div>
                         <span class="text-lg font-display font-semibold text-[var(--primary-dark)] block">U-Shape</span>
-                        <span class="text-sm text-[var(--text-sec)] font-light">100 pax</span>
+                        <span class="text-sm text-[var(--text-sec)] font-light">100 pessoas</span>
                     </div>
                     <div class="text-center group cursor-default">
                         <div
@@ -162,7 +167,7 @@
                         </div>
                         <span
                             class="text-lg font-display font-semibold text-[var(--primary-dark)] block">Pranchão</span>
-                        <span class="text-sm text-[var(--text-sec)] font-light">150 pax</span>
+                        <span class="text-sm text-[var(--text-sec)] font-light">150 pessoas</span>
                     </div>
                     <div class="text-center group cursor-default">
                         <div
@@ -171,7 +176,7 @@
                         </div>
                         <span
                             class="text-lg font-display font-semibold text-[var(--primary-dark)] block">Auditório</span>
-                        <span class="text-sm text-[var(--text-sec)] font-light">250 pax</span>
+                        <span class="text-sm text-[var(--text-sec)] font-light">250 pessoas</span>
                     </div>
                     <div class="text-center group cursor-default">
                         <div
@@ -179,7 +184,7 @@
                             <i data-lucide="utensils" stroke-width="1.5" class="w-7 h-7 text-[var(--primary-dark)]"></i>
                         </div>
                         <span class="text-lg font-display font-semibold text-[var(--primary-dark)] block">Jantar</span>
-                        <span class="text-sm text-[var(--text-sec)] font-light">200 pax</span>
+                        <span class="text-sm text-[var(--text-sec)] font-light">200 pessoas</span>
                     </div>
                 </div>
 
@@ -255,23 +260,57 @@
         <img src="assets/logos/GT-House-Logo-branca%20(para%20fundos%20claros)%20horizontal%20(1).png" alt="GT House"
             class="h-8 mx-auto mb-8 opacity-40" style="object-fit: contain;">
         <div class="flex justify-center gap-8 mb-8">
-            <a href="#" class="text-[var(--text-sec)] hover:text-[var(--primary-dark)] smooth-hover"><i
+            <a href="https://www.instagram.com/gthousesp/" target="_blank" rel="noopener" aria-label="Instagram GT House" class="text-[var(--text-sec)] hover:text-[var(--primary-dark)] smooth-hover"><i
                     data-lucide="instagram" stroke-width="1.5"></i></a>
-            <a href="#" class="text-[var(--text-sec)] hover:text-[var(--primary-dark)] smooth-hover"><i
-                    data-lucide="linkedin" stroke-width="1.5"></i></a>
         </div>
         <p class="text-[var(--text-sec)] font-light text-[11px] tracking-[0.2em] uppercase">© 2026 GT House Premium
             Events. SP/BR.</p>
     </footer>
 
-    <a href="#"
-        class="fixed bottom-10 right-10 w-16 h-16 bg-[#25D366] text-white rounded-full flex items-center justify-center shadow-[0_10px_30px_rgba(37,211,102,0.3)] hover:scale-105 smooth-hover z-50">
+    <a href="https://wa.me/5511921932889" target="_blank" rel="noopener" aria-label="Falar no WhatsApp"
+        class="fixed bottom-6 right-6 md:bottom-10 md:right-10 w-14 h-14 md:w-16 md:h-16 bg-[#25D366] text-white rounded-full flex items-center justify-center shadow-[0_10px_30px_rgba(37,211,102,0.3)] hover:scale-105 smooth-hover z-50">
         <i data-lucide="message-circle" stroke-width="1.5" class="w-7 h-7"></i>
     </a>
+
+    <!-- Mobile Menu Backdrop -->
+    <div id="mobileBackdrop" class="fixed inset-0 bg-black/50 z-[60] opacity-0 pointer-events-none transition-opacity duration-300 md:hidden"></div>
+
+    <!-- Mobile Menu Drawer -->
+    <aside id="mobileDrawer" class="fixed top-0 right-0 h-full w-[280px] max-w-[85vw] bg-white z-[70] translate-x-full transition-transform duration-300 ease-out md:hidden shadow-2xl flex flex-col">
+        <div class="flex items-center justify-between px-6 py-5 border-b border-[var(--bg-light)]">
+            <span class="font-display font-semibold text-lg text-[var(--primary-dark)]">Menu</span>
+            <button id="mobileClose" aria-label="Fechar menu" class="text-[var(--primary-dark)] p-1">
+                <i data-lucide="x" stroke-width="1.5" class="w-6 h-6"></i>
+            </button>
+        </div>
+        <nav class="flex flex-col px-6 py-4 text-[var(--text-sec)] font-medium">
+            <a href="index.html" class="py-3 border-b border-[var(--bg-light)] hover:text-[var(--primary-dark)] smooth-hover">Início</a>
+            <a href="index.html#espacos" class="py-3 border-b border-[var(--bg-light)] hover:text-[var(--primary-dark)] smooth-hover">Ambientes</a>
+            <a href="index.html#diferenciais" class="py-3 border-b border-[var(--bg-light)] hover:text-[var(--primary-dark)] smooth-hover">Estrutura</a>
+            <a href="index.html#localizacao" class="py-3 border-b border-[var(--bg-light)] hover:text-[var(--primary-dark)] smooth-hover">Localização</a>
+        </nav>
+        <div class="mt-auto px-6 py-6 border-t border-[var(--bg-light)] space-y-3">
+            <a href="index.html#orcamento" class="block bg-[var(--primary-dark)] text-white text-center py-3 rounded-full font-medium hover:bg-[var(--accent-blue)] smooth-hover">Solicitar Proposta</a>
+            <a href="https://wa.me/5511921932889" target="_blank" rel="noopener" class="block border border-[#25D366] text-[#25D366] text-center py-3 rounded-full font-medium hover:bg-[#25D366] hover:text-white smooth-hover">WhatsApp</a>
+        </div>
+    </aside>
 
     <script src="https://unpkg.com/lucide@latest"></script>
     <script>
         lucide.createIcons();
+        (function () {
+            const btn = document.getElementById('mobileMenuBtn');
+            const drawer = document.getElementById('mobileDrawer');
+            const backdrop = document.getElementById('mobileBackdrop');
+            const closeBtn = document.getElementById('mobileClose');
+            if (!btn || !drawer || !backdrop) return;
+            function openMenu() { drawer.classList.remove('translate-x-full'); backdrop.classList.remove('opacity-0', 'pointer-events-none'); document.body.style.overflow = 'hidden'; }
+            function closeMenu() { drawer.classList.add('translate-x-full'); backdrop.classList.add('opacity-0', 'pointer-events-none'); document.body.style.overflow = ''; }
+            btn.addEventListener('click', openMenu);
+            closeBtn?.addEventListener('click', closeMenu);
+            backdrop.addEventListener('click', closeMenu);
+            drawer.querySelectorAll('a').forEach(a => a.addEventListener('click', closeMenu));
+        })();
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('is-visible'); });
         }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });

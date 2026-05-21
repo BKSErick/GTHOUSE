@@ -117,6 +117,57 @@
         .delay-500 {
             transition-delay: 0.5s;
         }
+
+        /* Client Logos Row */
+        .logo-slot {
+            flex-shrink: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100px;
+            height: 44px;
+        }
+
+        @media (min-width: 768px) {
+            .logo-slot {
+                width: 120px;
+                height: 56px;
+            }
+        }
+
+        .logo-slot img {
+            max-width: 100%;
+            max-height: 100%;
+            width: auto;
+            height: auto;
+            object-fit: contain;
+            filter: brightness(0) invert(1);
+            opacity: 0.6;
+            transition: opacity 400ms ease, filter 400ms ease;
+        }
+
+        .logo-slot:hover img {
+            opacity: 1;
+            filter: none;
+        }
+
+        .logo-slot img.keep-color {
+            filter: none;
+            opacity: 0.9;
+        }
+
+        .logo-slot:hover img.keep-color {
+            opacity: 1;
+        }
+
+        .logos-row::-webkit-scrollbar {
+            height: 4px;
+        }
+
+        .logos-row::-webkit-scrollbar-thumb {
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 2px;
+        }
     </style>
 </head>
 
@@ -162,13 +213,15 @@
                 <a href="#diferenciais" class="hover:text-[var(--primary-dark)] smooth-hover">Estrutura</a>
                 <a href="#localizacao" class="hover:text-[var(--primary-dark)] smooth-hover">Localização</a>
             </div>
-            <a href="#orcamento"
-                class="hidden md:inline-flex bg-[var(--primary-dark)] text-white px-7 py-3 rounded-full text-[15px] font-medium hover:bg-[var(--accent-blue)] hover:shadow-lg hover:shadow-[var(--accent-blue-light)]/30 smooth-hover">
-                Agendar Uma Visita
-            </a>
-            <button class="md:hidden text-[var(--primary-dark)]">
-                <i data-lucide="menu" stroke-width="1.5" class="w-8 h-8"></i>
-            </button>
+            <div class="flex items-center gap-3">
+                <a href="#orcamento"
+                    class="inline-flex bg-[var(--primary-dark)] text-white px-4 py-2 md:px-7 md:py-3 rounded-full text-xs md:text-[15px] font-medium hover:bg-[var(--accent-blue)] hover:shadow-lg hover:shadow-[var(--accent-blue-light)]/30 smooth-hover whitespace-nowrap">
+                    Agendar Visita
+                </a>
+                <button id="mobileMenuBtn" aria-label="Abrir menu" class="md:hidden text-[var(--primary-dark)] p-1">
+                    <i data-lucide="menu" stroke-width="1.5" class="w-7 h-7"></i>
+                </button>
+            </div>
         </div>
     </nav>
 
@@ -194,8 +247,7 @@
         </h1>
         <p data-animate
             class="delay-200 text-[21px] text-[var(--text-sec)] mb-14 max-w-3xl mx-auto leading-relaxed font-light">
-            Arquitetura de vanguarda, tecnologia invisível e versatilidade ímpar no coração da Zona Oeste. Eleve o
-            padrão das suas convenções e imersões de alta performance.
+            Arquitetura premiada, tecnologia de ponta embarcada… Eleve o padrão de seu evento com a GT House.
         </p>
         <div data-animate class="delay-300 flex flex-col sm:flex-row gap-5 justify-center items-center">
             <a href="#orcamento"
@@ -221,24 +273,22 @@
     </section>
 
     <!-- Social Proof Refinado -->
-    <section class="py-16 border-y border-[var(--bg-light)] bg-white">
+    <section class="py-16 border-y border-white/10 bg-[var(--primary-dark)]">
         <div class="max-w-7xl mx-auto px-6 lg:px-12">
             <p data-animate
-                class="text-center text-sm font-semibold text-[var(--text-sec)]/70 mb-10 tracking-[0.2em] uppercase">
+                class="text-center text-sm font-semibold text-white/60 mb-10 tracking-[0.2em] uppercase">
                 Excelência comprovada por líderes do mercado</p>
-            <div
-                class="flex flex-wrap justify-center items-center gap-12 md:gap-28 opacity-40 grayscale hover:grayscale-0 smooth-hover transition-[filter,opacity] duration-700 hover:opacity-100">
-                <div class="flex items-center gap-2"><i data-lucide="compass" stroke-width="1.5"
-                        class="w-7 h-7"></i><span class="text-2xl font-display font-semibold tracking-tight">Cruzeiro do
-                        Sul</span></div>
-                <div class="flex items-center gap-2"><i data-lucide="hexagon" stroke-width="1.5"
-                        class="w-7 h-7"></i><span class="text-2xl font-display font-semibold tracking-tight">Novo
-                        Nordisk</span></div>
-                <div class="flex items-center gap-2"><i data-lucide="box" stroke-width="1.5" class="w-7 h-7"></i><span
-                        class="text-2xl font-display font-semibold tracking-tight">O Boticário</span></div>
-                <div class="flex items-center gap-2"><i data-lucide="triangle" stroke-width="1.5"
-                        class="w-7 h-7"></i><span
-                        class="text-2xl font-display font-semibold tracking-tight">Adidas</span></div>
+            <div data-animate
+                class="logos-row flex flex-nowrap justify-start md:justify-center items-center gap-6 md:gap-10 overflow-x-auto md:overflow-x-visible pb-2 md:pb-0">
+                <div class="logo-slot"><img src="assets/logos/Netflix_2015_logo%201.png" alt="Netflix"></div>
+                <div class="logo-slot"><img src="assets/logos/Adidas.png" alt="Adidas"></div>
+                <div class="logo-slot"><img src="assets/logos/Redbull.svg" alt="Red Bull" class="keep-color"></div>
+                <div class="logo-slot"><img src="assets/logos/cervejaria-ambev-seeklogo%201.png" alt="AmBev"></div>
+                <div class="logo-slot"><img src="assets/logos/sephora-seeklogo%201.svg" alt="Sephora"></div>
+                <div class="logo-slot"><img src="assets/logos/NFL.png" alt="NFL" class="keep-color"></div>
+                <div class="logo-slot"><img src="assets/logos/havaianas.png" alt="Havaianas"></div>
+                <div class="logo-slot"><img src="assets/logos/ze%20delivery.png" alt="Zé Delivery" class="keep-color"></div>
+                <div class="logo-slot"><img src="assets/logos/Triumph.png" alt="Triumph"></div>
             </div>
         </div>
     </section>
@@ -279,7 +329,7 @@
                         class="w-16 h-16 rounded-2xl bg-white/5 border border-white/10 flex items-center justify-center mb-8 group-hover:bg-[var(--accent-blue)]/20 smooth-hover">
                         <i data-lucide="radio" class="text-[var(--accent-blue-light)] w-8 h-8" stroke-width="1.5"></i>
                     </div>
-                    <h3 class="text-2xl font-display font-semibold mb-3 text-white">Tecnologia "Zero Setup"</h3>
+                    <h3 class="text-2xl font-display font-semibold mb-3 text-white">Tecnologia de ponta</h3>
                     <p class="text-white/60 text-lg leading-relaxed font-light">Wi-Fi dedicado corporativo, acústica
                         refinada e A/V integrado pronto para plugar e brilhar.</p>
                 </div>
@@ -291,7 +341,7 @@
                         <i data-lucide="glass-water" class="text-[var(--accent-blue-light)] w-8 h-8"
                             stroke-width="1.5"></i>
                     </div>
-                    <h3 class="text-2xl font-display font-semibold mb-3 text-white">F&B Signature</h3>
+                    <h3 class="text-2xl font-display font-semibold mb-3 text-white">A&B Signature</h3>
                     <p class="text-white/60 text-lg leading-relaxed font-light">Catering e mixologia assinados. De
                         finger foods elegantes a jantares executivos in loco.</p>
                 </div>
@@ -428,8 +478,7 @@
                             <div>
                                 <strong class="font-display text-2xl text-[var(--primary-dark)] block mb-2">Rede
                                     Hoteleira Faria Lima</strong>
-                                <span class="text-[var(--text-sec)] text-lg font-light">Deslocamento zero friction para
-                                    executivos de fora da base.</span>
+                                <span class="text-[var(--text-sec)] text-lg font-light">Deslocamento para executivos de fora da base.</span>
                             </div>
                         </li>
                     </ul>
@@ -482,22 +531,14 @@
                 </div>
 
                 <div class="space-y-8 relative z-10">
-                    <div class="flex items-center gap-6 group">
-                        <div
-                            class="w-14 h-14 rounded-full bg-white/5 border border-white/10 flex items-center justify-center group-hover:bg-[var(--accent-blue)]/20 smooth-hover">
-                            <i data-lucide="mail" stroke-width="1.5"
-                                class="w-6 h-6 text-[var(--accent-blue-light)] group-hover:scale-110 transition-transform"></i>
-                        </div>
-                        <span class="text-lg font-light tracking-wide text-white/90">reservas@gthouse.com.br</span>
-                    </div>
-                    <div class="flex items-center gap-6 group">
+                    <a href="https://wa.me/5511921932889" target="_blank" rel="noopener" class="flex items-center gap-6 group">
                         <div
                             class="w-14 h-14 rounded-full bg-white/5 border border-white/10 flex items-center justify-center group-hover:bg-[var(--accent-blue)]/20 smooth-hover">
                             <i data-lucide="phone" stroke-width="1.5"
                                 class="w-6 h-6 text-[var(--accent-blue-light)] group-hover:scale-110 transition-transform"></i>
                         </div>
-                        <span class="text-lg font-light tracking-wide text-white/90">+55 11 99999-9999</span>
-                    </div>
+                        <span class="text-lg font-light tracking-wide text-white/90">+55 11 92193-2889</span>
+                    </a>
                 </div>
             </div>
 
@@ -565,27 +606,68 @@
             class="h-8 mx-auto mb-8 opacity-40 grayscale group-hover:grayscale-0 smooth-hover"
             style="object-fit: contain;">
         <div class="flex justify-center gap-8 mb-8">
-            <a href="#" class="text-[var(--text-sec)] hover:text-[var(--primary-dark)] smooth-hover"><i
+            <a href="https://www.instagram.com/gthousesp/" target="_blank" rel="noopener" aria-label="Instagram GT House" class="text-[var(--text-sec)] hover:text-[var(--primary-dark)] smooth-hover"><i
                     data-lucide="instagram" stroke-width="1.5"></i></a>
-            <a href="#" class="text-[var(--text-sec)] hover:text-[var(--primary-dark)] smooth-hover"><i
-                    data-lucide="linkedin" stroke-width="1.5"></i></a>
         </div>
         <p class="text-[var(--text-sec)] font-light text-[11px] tracking-[0.2em] uppercase">© 2026 GT House Premium
             Events. SP/BR.</p>
     </footer>
 
-    <!-- Floating Action - Design Refinado -->
-    <a href="#"
-        class="fixed bottom-10 right-10 w-16 h-16 bg-[var(--primary-dark)] text-white rounded-full flex items-center justify-center shadow-[0_10px_30px_rgba(5,47,51,0.3)] hover:scale-105 hover:bg-[var(--accent-blue)] smooth-hover z-50 group">
-        <i data-lucide="message-square" stroke-width="1.5" class="w-7 h-7"></i>
-        <span
-            class="absolute right-20 bg-white border border-[var(--bg-light)] text-[var(--primary-dark)] text-sm font-semibold tracking-wide px-5 py-3 rounded-2xl opacity-0 pointer-events-none group-hover:opacity-100 group-hover:-translate-x-2 transition-all duration-300 whitespace-nowrap shadow-xl">Concierge
-            Digital</span>
+    <!-- Floating WhatsApp -->
+    <a href="https://wa.me/5511921932889" target="_blank" rel="noopener" aria-label="Falar no WhatsApp"
+        class="fixed bottom-6 right-6 md:bottom-10 md:right-10 w-14 h-14 md:w-16 md:h-16 bg-[#25D366] text-white rounded-full flex items-center justify-center shadow-[0_10px_30px_rgba(37,211,102,0.35)] hover:scale-105 smooth-hover z-50">
+        <i data-lucide="message-circle" stroke-width="1.5" class="w-7 h-7"></i>
     </a>
+
+    <!-- Mobile Menu Backdrop -->
+    <div id="mobileBackdrop" class="fixed inset-0 bg-black/50 z-[60] opacity-0 pointer-events-none transition-opacity duration-300 md:hidden"></div>
+
+    <!-- Mobile Menu Drawer -->
+    <aside id="mobileDrawer" class="fixed top-0 right-0 h-full w-[280px] max-w-[85vw] bg-white z-[70] translate-x-full transition-transform duration-300 ease-out md:hidden shadow-2xl flex flex-col">
+        <div class="flex items-center justify-between px-6 py-5 border-b border-[var(--bg-light)]">
+            <span class="font-display font-semibold text-lg text-[var(--primary-dark)]">Menu</span>
+            <button id="mobileClose" aria-label="Fechar menu" class="text-[var(--primary-dark)] p-1">
+                <i data-lucide="x" stroke-width="1.5" class="w-6 h-6"></i>
+            </button>
+        </div>
+        <nav class="flex flex-col px-6 py-4 text-[var(--text-sec)] font-medium">
+            <a href="index.html" class="py-3 border-b border-[var(--bg-light)] hover:text-[var(--primary-dark)] smooth-hover">Início</a>
+            <a href="index.html#espacos" class="py-3 border-b border-[var(--bg-light)] hover:text-[var(--primary-dark)] smooth-hover">Ambientes</a>
+            <a href="index.html#diferenciais" class="py-3 border-b border-[var(--bg-light)] hover:text-[var(--primary-dark)] smooth-hover">Estrutura</a>
+            <a href="index.html#localizacao" class="py-3 border-b border-[var(--bg-light)] hover:text-[var(--primary-dark)] smooth-hover">Localização</a>
+        </nav>
+        <div class="mt-auto px-6 py-6 border-t border-[var(--bg-light)] space-y-3">
+            <a href="index.html#orcamento" class="block bg-[var(--primary-dark)] text-white text-center py-3 rounded-full font-medium hover:bg-[var(--accent-blue)] smooth-hover">Solicitar Proposta</a>
+            <a href="https://wa.me/5511921932889" target="_blank" rel="noopener" class="block border border-[#25D366] text-[#25D366] text-center py-3 rounded-full font-medium hover:bg-[#25D366] hover:text-white smooth-hover">WhatsApp</a>
+        </div>
+    </aside>
 
     <script src="https://unpkg.com/lucide@latest"></script>
     <script>
         lucide.createIcons();
+
+        // Mobile Drawer
+        (function () {
+            const btn = document.getElementById('mobileMenuBtn');
+            const drawer = document.getElementById('mobileDrawer');
+            const backdrop = document.getElementById('mobileBackdrop');
+            const closeBtn = document.getElementById('mobileClose');
+            if (!btn || !drawer || !backdrop) return;
+            function openMenu() {
+                drawer.classList.remove('translate-x-full');
+                backdrop.classList.remove('opacity-0', 'pointer-events-none');
+                document.body.style.overflow = 'hidden';
+            }
+            function closeMenu() {
+                drawer.classList.add('translate-x-full');
+                backdrop.classList.add('opacity-0', 'pointer-events-none');
+                document.body.style.overflow = '';
+            }
+            btn.addEventListener('click', openMenu);
+            closeBtn?.addEventListener('click', closeMenu);
+            backdrop.addEventListener('click', closeMenu);
+            drawer.querySelectorAll('a').forEach(a => a.addEventListener('click', closeMenu));
+        })();
 
         // Scroll Animations via IntersectionObserver
         const observer = new IntersectionObserver((entries) => {
