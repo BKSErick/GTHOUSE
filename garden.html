@@ -26,6 +26,7 @@
             font-family: 'Inter', sans-serif;
             background-color: #F8FAFC;
             color: var(--text-dark);
+            overflow-x: hidden;
         }
 
         h1,
@@ -102,8 +103,8 @@
         <div class="max-w-7xl mx-auto px-6 lg:px-12 flex items-center justify-between h-[88px]">
             <a href="index.html" class="flex items-center gap-1 group">
                 <img src="assets/logos/GT-House-Logo-branca%20(para%20fundos%20claros)%20horizontal%20(1).png"
-                    alt="GT House Logo" class="h-10 transform smooth-hover group-hover:scale-105"
-                    style="object-fit: contain; object-position: left; width: 160px;">
+                    alt="GT House Logo" class="h-8 md:h-10 w-auto max-w-[120px] md:max-w-[160px] transform smooth-hover group-hover:scale-105"
+                    style="object-fit: contain; object-position: left;">
             </a>
             <div
                 class="hidden md:flex items-center gap-10 text-[15px] tracking-wide font-medium text-[var(--text-sec)]">
@@ -253,7 +254,7 @@
 
     <script src="https://unpkg.com/lucide@latest"></script>
     <script>
-        lucide.createIcons();
+        if (window.lucide) { try { lucide.createIcons(); } catch (e) { } }
         (function () {
             const btn = document.getElementById('mobileMenuBtn');
             const drawer = document.getElementById('mobileDrawer');
@@ -267,10 +268,18 @@
             backdrop.addEventListener('click', closeMenu);
             drawer.querySelectorAll('a').forEach(a => a.addEventListener('click', closeMenu));
         })();
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('is-visible'); });
-        }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
-        document.querySelectorAll('[data-animate]').forEach(el => observer.observe(el));
+        (function () {
+            const animated = document.querySelectorAll('[data-animate]');
+            const revealAll = () => animated.forEach(el => el.classList.add('is-visible'));
+            if (!('IntersectionObserver' in window)) { revealAll(); return; }
+            try {
+                const observer = new IntersectionObserver((entries) => {
+                    entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('is-visible'); });
+                }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+                animated.forEach(el => observer.observe(el));
+                window.addEventListener('load', () => setTimeout(revealAll, 1200));
+            } catch (e) { revealAll(); }
+        })();
     </script>
 </body>
 
