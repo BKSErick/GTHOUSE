@@ -183,7 +183,8 @@
             width: max-content;
             align-items: center;
             gap: 2.5rem;
-            animation: marquee-scroll 35s linear infinite;
+            will-change: transform;
+            animation: marquee-scroll 30s linear infinite;
         }
 
         .marquee:hover .marquee-track {
@@ -308,7 +309,7 @@
             <p data-animate
                 class="text-center text-sm font-semibold text-white/60 mb-10 tracking-[0.2em] uppercase">
                 Excelência comprovada por líderes do mercado</p>
-            <div data-animate class="marquee">
+            <div class="marquee">
                 <div class="marquee-track" aria-hidden="false">
                     <!-- Set 1 -->
                     <div class="logo-slot"><img src="assets/logos/Netflix_2015_logo%201.png" alt="Netflix"></div>
